@@ -1,5 +1,5 @@
 {
-  "name": "youtube.ts",
+  "name": "@bryanmytko/youtube.ts",
   "version": "0.2.9",
   "description": "Wrapper for the YouTube API with typings.",
   "main": "dist/youtube.js",
