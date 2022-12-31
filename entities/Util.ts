@@ -246,7 +246,13 @@ export class Util {
     public streamMP3 = async (videoResolvable: string) => {
         const id = await this.resolveID(videoResolvable, "video")
         const url = `https://www.youtube.com/watch?v=${id}`
-        return ytdl(url, {filter: "audioonly"})
+        return ytdl(url, {
+          filter: "audioonly",
+          highWaterMark: 1 << 62,
+          liveBuffer: 1 << 62,
+          dlChunkSize: 0,
+          quality: "lowestaudio",
+        })
     }
 
     /**
